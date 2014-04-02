@@ -1,0 +1,6 @@
+---
+#
+# Install all the prerequisites for ownCloud.
+#
+
+- include: apt.yaml

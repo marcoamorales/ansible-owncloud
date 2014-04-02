@@ -1,0 +1,42 @@
+---
+#
+# - Install all the prerequisites for ownCloud.
+# - Install the apt repository and install owncloud
+#
+
+- name: Install apache2
+  apt: pkg=apache2 state=present
+
+- name: Install php5
+  apt: pkg=php5 state=present
+
+- name: Install php5-gd
+  apt: pkg=php5-gd state=present
+
+- name: Install php-xml-parser
+  apt: pkg=php-xml-parser state=present
+
+- name: Install php5-intl
+  apt: pkg=php5-intl state=present
+
+- name: Install php5-mysql
+  apt: pkg=php5-mysql state=present
+
+- name: Install apache2
+  apt: pkg=php5-curl state=present
+
+- name: Install mysql-server
+  apt: pkg=mysql-server state=present
+
+- name: Install mysql-client
+  apt: pkg=mysql-client state=present
+
+- name: Add ownCloud sources to apt
+  apt_repository: repo='deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_13.10/ /' state=present
+
+- name: add ownCloud apt key
+  apt_key: url='http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_13.10/Release.key' state=present
+
+- name: Install ownCloud
+  apt: pkg=owncloud update_cache=yes state=present
+  notify: Restart apache2
