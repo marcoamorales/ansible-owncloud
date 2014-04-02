@@ -25,12 +25,6 @@
 - name: Install apache2
   apt: pkg=php5-curl state=present
 
-- name: Install mysql-server
-  apt: pkg=mysql-server state=present
-
-- name: Install mysql-client
-  apt: pkg=mysql-client state=present
-
 - name: Add ownCloud sources to apt
   apt_repository: repo='deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_13.10/ /' state=present
 

@@ -4,3 +4,6 @@
   roles:
   - ansible-pre-req
   - owncloud
+
+  vars:
+    password: "{{ password }}"

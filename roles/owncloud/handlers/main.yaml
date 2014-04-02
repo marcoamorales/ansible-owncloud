@@ -2,3 +2,6 @@
 
 - name: Restart apache2
   service: name=apache2 state=restarted
+
+- name: Secure MySQL
+  script: mysql_secure.sh {{ password }}
