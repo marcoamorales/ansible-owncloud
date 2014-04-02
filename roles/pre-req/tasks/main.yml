@@ -1,0 +1,10 @@
+---
+- name: update apt
+  command: apt-get update
+
+- name: install python-apt and aptitude
+  command: apt-get install -y python-apt-common aptitude python-apt
+
+- name: install python-pycurl
+  apt: pkg=python-pycurl state=present
+
