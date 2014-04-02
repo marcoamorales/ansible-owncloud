@@ -1,0 +1,17 @@
+---
+#
+# Setup the MySQL db for ownCloud
+#
+
+- name: Install mysql-server
+  apt: pkg=mysql-server state=present
+  notify: secure MySQL
+
+- name: Install mysql-client
+  apt: pkg=mysql-client state=present
+
+- name: Install expect
+  apt: pkg=expect state=present
+
+- name: Install python-mysqldb
+  apt: pkg=expect state=present
